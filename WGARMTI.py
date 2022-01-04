@@ -13,7 +13,7 @@ save_guild_id = True  # Save/Don't save the id of the guild
 ########################### CODE ###########################
 API_PATH = "https://discord.com/api/v9/users/@me/guilds"
 
-tokens_file = open(tokens_file_name, "r")
+tokens_file = open(tokens_file_name, "r", encoding="utf8", errors="ignore")
 tokens = tokens_file.read().splitlines()
 tokens_file.close()
 
@@ -56,9 +56,9 @@ for token in tokens:
             result_text += f"{guild_id} - {guild_name}\n"
 
 if reset_results_file:
-  results_file = open(results_file_name, "w")
+  results_file = open(results_file_name, "w", encoding="utf8", errors="ignore")
 else:
-  results_file = open(results_file_name, "a")
+  results_file = open(results_file_name, "a", encoding="utf8", errors="ignore")
 
 results_file.write(result_text)
 results_file.close()
